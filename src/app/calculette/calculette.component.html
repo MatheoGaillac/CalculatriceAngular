@@ -1,0 +1,13 @@
+<form [formGroup]="calculatrice" (ngSubmit)="calcul()">
+  <p><input type="text" name="operande1" (change)="calcul()" [formControl]="operande1" required></p>
+  <p><select name="operateur" (change)="calcul()" [formControl]="operateur" required>
+    <option>+</option>
+    <option>-</option>
+    <option>/</option>
+    <option>*</option>
+  </select></p>
+  <p><input type="text" name="operande2" (change)="calcul()" [formControl]="operande2" required></p>
+  <p><input type="submit" value="Calculer" [disabled]="!calculatrice.valid"></p>
+</form>
+<p>Résultat</p>
+<p>{{resultat}}</p>
