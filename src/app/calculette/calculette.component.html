@@ -11,3 +11,8 @@
 </form>
 <p>Résultat</p>
 <p>{{resultat}}</p>
+
+@if (flagTropDeCalcul) {
+<b>Trop de calculs effectués !</b>
+}
+<app-compteur-de-calcul #compteur (attentionNombreDeCalculImportant)="tropDeCalcul($event)"></app-compteur-de-calcul>
